@@ -1,0 +1,5 @@
+WIFI_SSID = "KUWIN-IOT"
+WIFI_PASS = ""
+MQTT_BROKER = "iot.cpe.ku.ac.th"
+MQTT_USER = "b6510545543"
+MQTT_PASS = "nantwat.suk@ku.ac.th"
