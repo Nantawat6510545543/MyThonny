@@ -46,7 +46,7 @@ async def msgR():
 
 def sub_callback(topic, payload):
     global timer
-    if topic.decode() == "b6510545543/midterm/blink":
+    if topic.decode() == "play":
         try:
             if 1 <= int(payload) <= 5:
                 if timer == 0:
@@ -77,7 +77,7 @@ async def count():
         if sw2.value() == 0:
             counter += 1
             print(counter)
-            mqtt.publish("b6510545543/midterm/count", str(counter))
+            mqtt.publish("play", str(counter))
 
         while sw2.value() == 0:
             await asyncio.sleep_ms(0)
@@ -85,7 +85,7 @@ async def count():
 
 
 mqtt.set_callback(sub_callback)
-mqtt.subscribe("b6510545543/midterm/blink")
+mqtt.subscribe("play")
 
 asyncio.create_task(msgR())
 asyncio.create_task(light())
